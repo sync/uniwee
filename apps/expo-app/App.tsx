@@ -1,20 +1,39 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider, SafeAreaListener, SafeAreaView } from 'react-native-safe-area-context';
+import { Uniwind } from 'uniwind';
 
-export default function App() {
+import './global.css';
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <SafeAreaProvider>
       <StatusBar style="auto" />
-    </View>
+      <SafeAreaListener
+        onChange={({ insets }) => {
+          Uniwind.updateInsets(insets);
+        }}
+      >
+        <AppContent />
+      </SafeAreaListener>
+    </SafeAreaProvider>
   );
 }
+
+function AppContent() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View className="flex-1 bg-red-100">
+        <Text>Open up App.tsx to start working on your app!</Text>
+      </View>
+    </SafeAreaView>
+  );
+}
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

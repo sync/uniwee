@@ -1,5 +1,6 @@
 const { getDefaultConfig } = require('@react-native/metro-config');
 const path = require('path');
+const { withUniwindConfig } = require('uniwind/metro');
 
 const projectRoot = __dirname;
 const workspaceRoot = path.resolve(projectRoot, '../..');
@@ -18,4 +19,10 @@ config.resolver.nodeModulesPaths = [
   path.resolve(workspaceRoot, 'node_modules'),
 ];
 
-module.exports = config;
+module.exports = withUniwindConfig(config, {
+  // relative path to your global.css file (from previous step)
+  cssEntryFile: './global.css',
+  // (optional) path where we gonna auto-generate typings
+  // defaults to project's root
+  dtsFile: './uniwind-types.d.ts',
+});

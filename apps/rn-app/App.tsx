@@ -1,12 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import { StatusBar, StyleSheet, Text, useColorScheme, View } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaListener, SafeAreaView } from 'react-native-safe-area-context';
+import { Uniwind } from 'uniwind';
+
+import './global.css';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -14,23 +10,31 @@ function App() {
   return (
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
+      <SafeAreaListener
+        onChange={({ insets }) => {
+          Uniwind.updateInsets(insets);
+        }}
+      >
+        <AppContent />
+      </SafeAreaListener>
     </SafeAreaProvider>
   );
 }
 
 function AppContent() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View className="flex-1 bg-red-100">
+        <Text>Open up App.tsx to start working on your app!</Text>
+      </View>
+    </SafeAreaView>
   );
 }
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
 });
-
-export default App;
