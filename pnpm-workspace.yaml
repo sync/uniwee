@@ -4,3 +4,6 @@ packages:
 enableGlobalVirtualStore: true
 
 nodeLinker: hoisted
+
+patchedDependencies:
+  uniwind@1.10.0: patches/uniwind@1.10.0.patch
