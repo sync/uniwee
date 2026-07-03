@@ -1,0 +1,11 @@
+android
+ios
+assets
+fastlane
+pnpm-lock.yaml
+coverage
+dist
+uniwind-types.d.ts
+.expo
+vendor
+.claude

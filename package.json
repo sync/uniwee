@@ -2,7 +2,10 @@
   "private": true,
   "name": "uniwee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write .",
+    "start:expo": "pnpm --filter expo-app start",
+    "start:rn": "pnpm --filter rn-app start",
+    "sherif": "sherif --fix"
   },
   "packageManager": "pnpm@10.33.2",
   "prettier": {
@@ -14,8 +17,7 @@
   "dependencies": {
     "prettier": "^3.9.4"
   },
-  "scripts": {
-    "format": "prettier --write .",
-    "start:expo": "pnpm --filter expo-app start"
+  "devDependencies": {
+    "sherif": "^1.12.0"
   }
 }
