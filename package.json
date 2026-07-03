@@ -14,10 +14,8 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "dependencies": {
-    "prettier": "^3.9.4"
-  },
   "devDependencies": {
+    "prettier": "^3.9.4",
     "sherif": "^1.12.0"
   }
 }
