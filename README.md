@@ -78,5 +78,3 @@ pnpm --filter rn-app test
 - Both Metro scripts use the default Metro port behavior. Do not run both Metro
   servers at the same time unless you configure one of them to use a different port.
 - Both apps use Uniwind and Tailwind through each app's `global.css`.
-- The repo includes a pnpm patch for `uniwind@1.10.0`, so use pnpm instead of npm
-  or yarn.
