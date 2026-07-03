@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "uniwee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "packageManager": "pnpm@10.33.2",
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "dependencies": {
+    "prettier": "^3.9.4"
+  },
+  "scripts": {
+    "format": "prettier --write ."
+  }
+}

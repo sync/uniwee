@@ -1,0 +1,6 @@
+packages:
+  - 'apps/*'
+
+enableGlobalVirtualStore: true
+
+nodeLinker: hoisted
